@@ -19,12 +19,17 @@ document.body.appendChild(renderer.domElement);
 // const geometry = new THREE.BoxGeometry();
 // const geometry = new THREE.PlaneGeometry(10, 10);
 // const geometry = new THREE.SphereGeometry();
-const geometry = new THREE.TorusGeometry(5, 1, 200, 20);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const geometry = new THREE.TorusGeometry(5, 1, 20, 20);
+const material = new THREE.MeshBasicMaterial({
+  color: 0x00ff00,
+  transparent: true,
+  opacity: 0.3,
+  wireframe: true,
+});
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
-camera.position.z = 50;
+camera.position.z = 20;
 
 let i = 0;
 function animate() {
